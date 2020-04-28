@@ -7,10 +7,6 @@ class MaszynaTuringa:
     Diagram = np.array([['<#/3,L>','<3/2,L>']])
     def __init__(self, Alfabet, Stany, Diagram):
 
-        Tasma = []
-
-        Pocz=Tasma.index('#')
-        Koncowy = Tasma[len(Tasma)]
 
         if type(Alfabet) != list:
             raise RuntimeError("Alfabet nie jest lista")
