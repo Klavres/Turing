@@ -1,0 +1,23 @@
+import numpy as np
+import networkx as nx
+class MaszynaTuringa:
+
+    Alfabet = ['1', '0','#']
+    Stany = [('StanA', 'Pocz'), ('StanB', 'Zw'),('StanC','Koncowy')]
+    Diagram = np.array([['<#/3,L>','<3/2,L>']])
+    def __init__(self, Alfabet, Stany, Diagram):
+
+        Tasma = []
+
+        Pocz=Tasma.index('#')
+        Koncowy = Tasma[len(Tasma)]
+
+        if type(Alfabet) != list:
+            raise RuntimeError("Alfabet nie jest lista")
+        if type(Stany) != list or dict:
+            raise RuntimeError("Stany nie sa lista ani slownikiem")
+        if Stany not in Alfabet:
+            raise RuntimeError("Stany zawiera elementy spoza alfabetu")
+        for i in len(Alfabet):
+            if isinstance(Alfabet[i], str) and len(Alfabet[i]) != 1:
+                raise RuntimeError("alfabet nie jest lista pojedynczych znakow")
